@@ -1,0 +1,297 @@
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #f9f6f1, #e0d6c8);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  color: #4a3f35;
+  line-height: 1.6;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.auth-body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  align-items: center;
+}
+.auth-container {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  text-align: center;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+input {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  width: 80%;
+}
+button {
+  padding: 10px 20px;
+  margin-top: 10px;
+  background: #8b5e3c;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:hover {
+  background: #6f442b;
+}
+.logo {
+  max-width: 100px;
+  margin-bottom: 0.5rem;
+}
+.logo-header {
+  height: 70px;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #8b5e3c;
+  color: #fff;
+  padding: 10px 20px;
+}
+header a,
+header button {
+  color: #fff;
+}
+
+h1.titulo-principal {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.8rem; /* Tamaño grande pero escalable */
+  font-weight: 700; /* Negrita elegante */
+  color: #210; /* Gris oscuro, mejor que negro puro */
+  text-align: center; 
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  letter-spacing: 0.02em; /* Separación ligera entre letras */
+  line-height: 1.2; /* Altura de línea profesional */
+}
+.carrousel {
+  width: 90%;
+  max-width: 120em;
+  padding: 1em;
+  color: var(--negro);
+  transition: all 0.4s ease;
+  border-radius: 1em;
+  background-color: var(--blanco);
+  box-shadow: 1em 1em 2em var(--sombra-ppal), -1em -1em 2em var(--sombra-sec), inset 0 0 0 transparent, inset 0 0 0 transparent;
+  overflow: hidden;
+}
+
+.carrousel .grande {
+  width: 200%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: -2em;
+  color: var(--negro);
+  transition: all 0.4s ease;
+  border-radius: 1em;
+  background-color: var(--blanco);
+  box-shadow: 1em 1em 2em var(--sombra-ppal), -1em -1em 2em var(--sombra-sec), inset 0 0 0 transparent, inset 0 0 0 transparent;
+  padding: 1em;
+  transition: all 0.5s ease;
+  transform: translateX(0%);
+}
+.carrousel .img {
+  width: calc( 100% / 2 - 2em);
+  min-height: 10vh;
+  color: var(--negro);
+  transition: all 0.4s ease;
+  border-radius: 1em;
+  background-color: var(--blanco);
+  box-shadow: 1em 1em 2em var(--sombra-ppal), -1em -1em 2em var(--sombra-sec), inset 0 0 0 transparent, inset 0 0 0 transparent;
+}
+
+.carrousel .puntos {
+  width: 100%;
+  margin: 1em 0 0;
+  padding: 0.4em;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.carrousel .punto {
+  width: 2em;
+  height: 2em;
+  margin: 1em 1em 0;
+  color: var(--negro);
+  transition: all 0.4s ease;
+  border-radius: 1em;
+  background-color: var(--blanco);
+  box-shadow: 0.6em 0.6em 1.2em var(--sombra-ppal), -0.6em -0.6em 1.2em var(--sombra-sec), inset 0 0 0 transparent, inset 0 0 0 transparent;
+}
+
+.carrousel .punto.activo {
+  background-color: chocolate;
+}
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+.product-card {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+.product-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+}
+.out-of-stock {
+  color: red;
+  font-weight: bold;
+}
+.cart-container {
+  padding: 20px;
+}
+.cart-item {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+.cart-total {
+  padding: 10px 20px;
+  text-align: right;
+  font-weight: bold;
+}
+.logout-btn {
+  background: transparent;
+  border: 1px solid #fff;
+  font-weight: bold;
+  cursor: pointer;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 5px;
+}
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.intro {
+  text-align: center;
+  margin: 40px auto;
+}
+.footer {
+  background: #8b5e3c;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+.auth-body .footer {
+  margin-top: auto;
+}
+
+/* Admin Dashboard */
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+}
+.sidebar {
+  background: #8b5e3c;
+  padding: 20px;
+  color: #fff;
+  min-width: 160px;
+}
+.sidebar button {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+}
+.sidebar .side {
+  margin-top: 40px;
+  background: transparent;
+  border: 1px solid #fff;
+}
+.main-content {
+  flex: 1;
+  padding: 20px;
+}
+.module input {
+  width: 90%;
+}
+.module input[type="checkbox"] {
+  width: auto;
+}
+.admin-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+.admin-check {
+  display: flex;
+  align-items: center;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 400px;
+  width: 90%;
+}
+
+.contact {
+  text-align: center;
+  margin: 40px auto;
+}
+
+.contact form {
+  max-width: 400px;
+  margin: 20px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact input,
+.contact textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: inherit;
+}
+
+.contact button {
+  width: 120px;
+  align-self: center;
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body onload="initAdmin()">
+  <div class="dashboard-container">
+      <div class="sidebar">
+        <button onclick="showModule('products')">Productos</button>
+        <button onclick="showModule('users')">Clientes</button>
+        <button onclick="showModule('cobranzas')">Cobranzas</button>
+        <button onclick="showModule('invoices')">Facturas</button>
+        <button onclick="showModule('suppliers')">Proveedores</button>
+        <button onclick="showModule('purchases')">Órdenes de Compra</button>
+        <button onclick="logout()" class="logout-btn side">Cerrar Sesión</button>
+      </div>
+    <div class="main-content">
+      <h2>Panel de Administración</h2>
+
+      <div id="productsModule" class="module">
+        <h3>Productos</h3>
+        <button onclick="downloadReport('products')">Exportar PDF</button>
+        <input id="search" placeholder="Buscar..." oninput="loadAdminProducts()">
+        <div id="productForm">
+          <input id="newName" placeholder="Nombre">
+          <input id="newDesc" placeholder="Descripción">
+          <input id="newPrice" type="number" placeholder="Precio">
+          <input id="newImage" type="file" accept="image/*">
+          <button id="saveBtn" onclick="createProduct()">Agregar</button>
+        </div>
+        <div id="products"></div>
+      </div>
+
+      <div id="usersModule" class="module" style="display:none;">
+        <h3>Clientes</h3>
+        <button onclick="downloadReport('users')">Exportar PDF</button>
+        <input id="searchUsers" placeholder="Buscar..." oninput="loadAdminUsers()">
+        <div id="userForm">
+          <input id="userName" placeholder="Nombre">
+          <input id="userLast" placeholder="Apellido">
+          <input id="userEmail" placeholder="Correo">
+          <input id="userPass" type="password" placeholder="Contraseña">
+          <div class="admin-actions">
+            <label class="admin-check"><input type="checkbox" id="userAdmin"> Admin</label>
+            <button id="saveUserBtn" onclick="createUser()">Agregar</button>
+          </div>
+        </div>
+        <div id="users"></div>
+      </div>
+
+      <div id="cobranzasModule" class="module" style="display:none;">
+        <h3>Cobranzas</h3>
+        <button onclick="downloadReport('cobranzas')">Exportar PDF</button>
+        <input id="searchOrders" placeholder="Buscar..." oninput="renderOrders()">
+        <div id="orders"></div>
+      </div>
+
+      <div id="invoicesModule" class="module" style="display:none;">
+        <h3>Facturas</h3>
+        <button onclick="downloadReport('facturas')">Exportar PDF</button>
+        <input id="searchInvoices" placeholder="Buscar..." oninput="renderInvoices()">
+        <div id="invoices"></div>
+      </div>
+
+      <div id="suppliersModule" class="module" style="display:none;">
+        <h3>Proveedores</h3>
+        <button onclick="downloadReport('suppliers')">Exportar PDF</button>
+        <input id="searchSuppliers" placeholder="Buscar..." oninput="loadAdminSuppliers()">
+        <div id="supplierForm">
+          <input id="supplierName" placeholder="Nombre" required>
+          <input id="supplierEmail" type="email" placeholder="Correo Electrónico" required>
+          <input id="supplierPhone" placeholder="Teléfono">
+          <button id="saveSupplierBtn" onclick="createSupplier()">Agregar</button>
+        </div>
+        <div id="suppliers"></div>
+      </div>
+
+      <div id="purchasesModule" class="module" style="display:none;">
+        <h3>Órdenes de Compra</h3>
+        <button onclick="downloadReport('purchase-orders')">Exportar PDF</button>
+        <button onclick="createPurchase()">Agregar</button>
+        <input id="searchPurchases" placeholder="Buscar..." oninput="renderPurchases()">
+        <div id="purchases"></div>
+      </div>
+
+    </div>
+  </div>
+  <div id="modal" class="modal" style="display:none;">
+    <div class="modal-content" id="modalContent">
+      <!-- contenido inyectado por JS -->
+      <button onclick="closeModal()">Cerrar</button>
+    </div>
+  </div>
+  <script src="admin.js"></script>
+</body>
+</html>

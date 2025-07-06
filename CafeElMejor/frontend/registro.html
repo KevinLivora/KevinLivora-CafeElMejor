@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Registro - Café El Mejor</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+  <body class="auth-body">
+    <div class="auth-container">
+      <img src="assets/Logo.jpg" alt="Logo" class="logo">
+      <h2>Registro</h2>
+      <input type="text" id="regFirstName" placeholder="Nombre" required>
+      <input type="text" id="regLastName" placeholder="Apellido" required>
+      <input type="email" id="regEmail" placeholder="Correo Electrónico" required>
+      <input type="password" id="regPass" placeholder="Contraseña" required>
+      <button onclick="register()">Registrarse</button>
+      <p>¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a></p>
+      <p>Al registrarte confirmas que la información proporcionada es correcta.</p>
+      <button onclick="location.href='landing.html'">Regresar a Página Principal</button>
+    </div>
+    <script src="auth.js"></script>
+    <footer class="footer">
+      Café El Mejor &copy; 2025 - Todos los derechos reservados.
+    </footer>
+</body>
+</html>
+

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Café El Mejor - Inicio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <img src="assets/Logo.jpg" class="logo-header" alt="Logo">
+    <div>
+      <a href="login.html"><button class="logout-btn">Iniciar Sesión</button></a>
+      <a href="admin/login"><button class="logout-btn">Administración</button></a>
+    </div>
+  </header>
+  <section class="intro">
+      <h1 class="titulo-principal">Bienvenido a Café El Mejor</h1>
+      <p>El mejor café de especialidad, aromas intensos y sabores inolvidables.</p>
+    </section>
+  <div class="carrousel">
+      <div class="grande">
+        <img src="assets/Portada.jpg" alt="Imagen 1" class="img">
+        <img src="assets/Portada1.jpg" alt="Imagen 2" class="img">
+      </div>
+      <ul class="puntos">
+        <li class="punto activo"></li>
+        <li class="punto"></li>
+      </ul>
+  </div>
+  <main>
+    <section class="featured">
+      <h2>Nuestros productos destacados</h2>
+      <div id="landing-products" class="products-grid"></div>
+    </section>
+    <section class="intro">
+      <h2>Nuestra Historia</h2>
+      <p>
+        Café El Mejor nació en 1987 como un pequeño emprendimiento en Seattle, Washington, dedicado a la venta de café con apenas nueve sucursales. Gracias a la pasión por ofrecer un producto de calidad y una experiencia única, la empresa creció exponencialmente, convirtiéndose para 2010 en el principal tostador y minorista de café del mundo, con más de 16.000 puntos de venta en más de 50 países. 
+        Sin embargo, en 2009 enfrentamos uno de los mayores desafíos de nuestra historia. Una crisis global y cambios en los hábitos de consumo llevaron al cierre de cientos de locales, obligándonos a repensar nuestro modelo de negocio. Fue entonces cuando apostamos por un profundo proceso de transformación digital, convencidos de que la innovación era clave para volver a conectar con nuestros clientes y fortalecer nuestra propuesta de valor. 
+        Hoy, Café El Mejor sigue honrando su esencia: poner en valor una de las materias primas más apreciadas del mundo —el café— con un compromiso renovado hacia la calidad, la tecnología y la sustentabilidad.
+      </p>
+    </section>
+    <section class="contact">
+      <h2>Contacto</h2>
+      <p>¿Tienes dudas o comentarios? Escríbenos y te responderemos pronto.</p>
+      <form id="contact-form">
+        <input type="text" placeholder="Nombre" required>
+        <input type="email" placeholder="Correo electrónico" required>
+        <textarea placeholder="Mensaje" rows="4" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </main>
+  <footer class="footer">
+    Café El Mejor &copy; 2025 - Todos los derechos reservados.
+  </footer>
+  <script src="landing.js"></script>
+</body>
+</html>

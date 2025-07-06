@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Café El Mejor - Tienda</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+  <body onload="checkSession(); loadProducts(); viewCart();">
+    <header>
+      <img src="assets/Logo.jpg" alt="Logo" class="logo-header">
+      <button onclick="logout()" class="logout-btn">Cerrar sesión</button>
+    </header>
+    <main>
+      <h1>Catálogo de Productos</h1>
+      <p>Explora nuestra selección y disfruta del auténtico sabor del café.</p>
+      <div id="products" class="products-grid"></div>
+      <h2>Carrito</h2>
+      <div id="cart" class="cart-container"></div>
+      <div id="cart-total" class="cart-total"></div>
+      <button onclick="goToPayment()">Confirmar Compra</button>
+    </main>
+    <footer class="footer">
+      Café El Mejor &copy; 2025 - Todos los derechos reservados.
+    </footer>
+    <script src="auth.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
+
