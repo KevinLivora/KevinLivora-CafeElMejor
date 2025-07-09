@@ -117,9 +117,11 @@ h1.titulo-principal {
   transform: translateX(0%);
 }
 .carrousel .img {
-  width: calc(100% / 2 - 2em);
+  width: 50%;
   height: 300px;
   object-fit: cover;
+  display: block;
+  margin: 0 auto;
   color: var(--text-color);
   transition: all 0.4s ease;
   background-color: var(--bg-light);
