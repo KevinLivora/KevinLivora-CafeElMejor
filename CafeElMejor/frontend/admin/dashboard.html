@@ -6,16 +6,19 @@
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body onload="initAdmin()">
+  <header>
+    <img src="../assets/Logo.jpg" class="logo-header" alt="Logo">
+    <button onclick="logout()" class="logout-btn">Cerrar Sesión</button>
+  </header>
+  <nav class="admin-nav">
+    <button onclick="showModule('products')">Productos</button>
+    <button onclick="showModule('users')">Clientes</button>
+    <button onclick="showModule('cobranzas')">Cobranzas</button>
+    <button onclick="showModule('invoices')">Facturas</button>
+    <button onclick="showModule('suppliers')">Proveedores</button>
+    <button onclick="showModule('purchases')">Órdenes de Compra</button>
+  </nav>
   <div class="dashboard-container">
-      <div class="sidebar">
-        <button onclick="showModule('products')">Productos</button>
-        <button onclick="showModule('users')">Clientes</button>
-        <button onclick="showModule('cobranzas')">Cobranzas</button>
-        <button onclick="showModule('invoices')">Facturas</button>
-        <button onclick="showModule('suppliers')">Proveedores</button>
-        <button onclick="showModule('purchases')">Órdenes de Compra</button>
-        <button onclick="logout()" class="logout-btn side">Cerrar Sesión</button>
-      </div>
     <div class="main-content">
       <h2>Panel de Administración</h2>
 
