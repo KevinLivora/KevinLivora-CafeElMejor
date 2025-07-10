@@ -37,7 +37,7 @@ body {
   align-items: center;
 }
 
-.auth-container button {
+.admin-auth .auth-container button {
   width: 100%;
   margin: 10px 0;
   display: block;
