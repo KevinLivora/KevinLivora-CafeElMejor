@@ -36,6 +36,12 @@ body {
   flex-direction: column;
   align-items: center;
 }
+
+.auth-container button {
+  width: 100%;
+  margin: 10px 0;
+  display: block;
+}
 input {
   display: block;
   margin: 10px auto;
