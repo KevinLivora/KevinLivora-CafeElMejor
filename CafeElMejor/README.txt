@@ -1,80 +1,85 @@
-Café El Mejor - Aplicación Web
-==============================
+Café El Mejor – Plataforma Web
 
-Este proyecto es una plataforma sencilla para la venta de café. 
-Consta de un backend en Node.js que expone una API REST y un frontend hecho con HTML, CSS y JavaScript.
+Este proyecto consiste en una aplicación simple orientada a la venta de café, con una estructura que separa el backend (servidor) del frontend (interfaz del usuario).  
+El servidor está desarrollado con Node.js y provee una API REST, mientras que la interfaz utiliza HTML, CSS y JavaScript.
 
----
+-----------------------------------------------------
+Tecnologías empleadas:
 
-## Tecnologías utilizadas
+- Node.js y Express para el desarrollo del servidor.
+- SQLite3 como sistema de base de datos local.
+- Interfaz desarrollada con HTML5, CSS3 y JavaScript.
+- Facturas en formato PDF generadas mediante un script propio (sin bibliotecas externas).
+- Soporte para CORS, permitiendo el acceso desde el cliente web.
 
-- **Node.js** y **Express** como servidor web.
-- **SQLite3** como base de datos embebida.
-- **HTML5**, **CSS3** y **JavaScript** para la interfaz de usuario.
-- Generación de facturas en **PDF** a partir de un script propio (sin librerías externas).
-- **CORS** habilitado para permitir peticiones desde el frontend.
+-----------------------------------------------------
+Organización del repositorio:
 
-## Estructura del repositorio
+backend/   -> Lógica del servidor y conexión a la base de datos
+frontend/  -> Archivos visibles en el navegador (HTML, CSS, JS)
 
-```
-backend/   Código del servidor Express y la base de datos
-frontend/  Archivos estáticos que se sirven al navegador
-```
+Contenido del directorio backend:
 
-Dentro de **backend** se encuentran:
+- server.js: lanza el servidor, sirve el contenido estático y define las rutas de la API.
+- models/db.js: configuración de la base de datos y creación de las tablas.
+- routes/: contiene las rutas REST para autenticación, productos, carrito, compras, administrador y cobranzas.
+- package.json: contiene las dependencias necesarias (express, sqlite3, cors) y comandos de ejecución.
+- tests/: carpeta prevista para pruebas (aún vacía).
 
-- `server.js` – inicia el servidor, sirve la carpeta `frontend` y define las rutas principales.
-- `models/db.js` – configuración y creación de tablas en SQLite.
-- `routes/` – archivos con las rutas REST (`auth`, `products`, `carrito`, `confirmar`, `admin`, `cobranzas`).
-- `package.json` – dependencias (`express`, `sqlite3`, `cors`) y scripts de npm.
-- `tests/` – carpeta reservada para pruebas (actualmente sin implementaciones).
+Contenido del directorio frontend:
 
-El directorio **frontend** contiene las páginas del sitio y su lógica en JavaScript:
+- landing.html / landing.js: página de inicio accesible al público.
+- login.html y registro.html: formularios para iniciar sesión o registrarse.
+- index.html y app.js: muestra los productos, carrito y proceso de compra.
+- pago.html: selección del método de pago.
+- admin/: sección administrativa (dashboard y admin.js).
+- styles.css: hoja de estilo compartida para todo el sitio.
 
-- `landing.html` / `landing.js` – página pública inicial.
-- `login.html` y `registro.html` – formulario de acceso y registro de clientes.
-- `index.html` y `app.js` – catálogo de productos, carrito y confirmación de compra.
-- `pago.html` – selección de método de pago.
-- `admin/` – panel de administración (dashboard, script `admin.js`).
-- `styles.css` – estilos compartidos.
+Las imágenes que suben los administradores se almacenan en frontend/uploads/
 
-Las imágenes subidas por el administrador se almacenan en `frontend/uploads/`.
+-----------------------------------------------------
+Cómo ejecutar el proyecto:
 
-## Instalación
+1. Abre una terminal dentro de la carpeta backend.
+2. Ejecuta los siguientes comandos:
 
-1. Abre una terminal en la carpeta `backend`.
-2. Ejecuta:
-   ```bash
    npm install
    PORT=3000 DB_PATH=./db.sqlite node server.js
-   ```
-3. Visita `http://localhost:3000/` en el navegador.
-4. Regístrate o inicia sesión para poder agregar productos al carrito.
 
-## Funcionamiento general
+3. Abre http://localhost:3000/ en tu navegador.
+4. Regístrate o inicia sesión para comenzar a usar la tienda.
 
-- Los clientes pueden registrarse, iniciar sesión, navegar los productos y realizar compras.
-- El carrito se almacena en la base de datos y se verifica el stock antes de confirmar.
-- Al confirmar la compra se genera un registro en `cobranzas` y una factura en `facturas`. El endpoint `/api/invoice/:orderId` permite descargar el PDF generado.
+-----------------------------------------------------
+Funcionamiento general:
 
-### Panel de administración
+- Los usuarios pueden crear una cuenta, iniciar sesión, ver productos y realizar pedidos.
+- El sistema guarda el carrito en la base de datos y comprueba el stock antes de procesar la compra.
+- Al confirmar un pedido, se registra en la tabla cobranzas y se genera una factura. Esta puede descargarse desde: 
+  /api/invoice/:orderId
 
-1. Crea primero un usuario normal y luego márcalo como administrador:
-   ```bash
+-----------------------------------------------------
+Acceso de administrador:
+
+1. Registra un usuario común y luego ejecútale el siguiente comando para convertirlo en administrador:
+
    sqlite3 backend/db.sqlite "UPDATE clientes SET isAdmin=1 WHERE correo='tu@correo.com';"
-   ```
-2. Accede a `http://localhost:3000/admin/login`.
-3. Desde el dashboard podrás administrar productos, usuarios, cobranzas, facturas, proveedores y órdenes de compra.
 
-## Variables de entorno
+2. Accede al panel en http://localhost:3000/admin/login
+3. Desde allí podrás gestionar productos, usuarios, cobranzas, facturas, proveedores y órdenes de compra.
 
-- `PORT` – Puerto donde se levanta el servidor (por defecto 3000).
-- `DB_PATH` – Ruta al archivo SQLite (por defecto `./db.sqlite`).
+-----------------------------------------------------
+Configuración mediante variables de entorno:
 
-## Pruebas
+- PORT: define el puerto en el que se ejecuta el servidor (por defecto: 3000)
+- DB_PATH: ruta del archivo de base de datos SQLite (por defecto: ./db.sqlite)
 
-Existe un script `npm test` pero actualmente no hay pruebas implementadas (`backend/tests/run-tests.js`).
+-----------------------------------------------------
+Pruebas:
 
----
+Existe un archivo para pruebas en backend/tests/run-tests.js, aunque actualmente no contiene test implementados.  
+El comando disponible es:
 
-Este proyecto demuestra cómo montar una aplicación web completa utilizando únicamente herramientas básicas de Node.js y un frontend ligero en HTML/CSS/JS.
+   npm test
+
+-----------------------------------------------------
+Este proyecto sirve como ejemplo de cómo desarrollar una aplicación web funcional utilizando únicamente Node.js y tecnologías básicas del lado del cliente.
