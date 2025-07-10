@@ -229,8 +229,7 @@ main {
 
 /* Admin Dashboard */
 .dashboard-container {
-  display: flex;
-  min-height: 100vh;
+  padding: 20px;
 }
 .sidebar {
   background: var(--bg-light);
@@ -252,6 +251,16 @@ main {
 .main-content {
   flex: 1;
   padding: 20px;
+}
+.admin-nav {
+  display: flex;
+  gap: 10px;
+  background: var(--bg-light);
+  padding: 10px 20px;
+  border-bottom: 4px solid var(--accent-cyan);
+}
+.admin-nav button {
+  margin: 0;
 }
 .module input {
   width: 90%;
