@@ -264,9 +264,11 @@ main {
   background: var(--bg-light);
   padding: 10px 20px;
   border-bottom: 4px solid var(--accent-cyan);
+  width: 100%;
 }
 .admin-nav button {
   margin: 0;
+  flex: 1;
 }
 .module input {
   width: 90%;
